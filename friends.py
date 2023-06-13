@@ -9,9 +9,22 @@ class friends(BaseModel):
     Mobile: str
 
 
-@app.get("/friends",response_model=friends)
+@app.get("/friends",response_model=list[friends])
 def friends_info():
     return[
-        {"id":2,"FirstName":"Aksh","Lastname":"Patel","Mobile":"Samsung"}
-    
+        {"id":2,"FirstName":"Aksh","LastName":"Patel","Mobile":"Samsung"},
+        {"id":4,"FirstName":"Ami","LastName":"Porter","Mobile":"Iphone"},
+        {"id":5,"FirstName":"Akshay","LastName":"Pat","Mobile":"Apple"},
+        {"id":6,"FirstName":"Amiy","LastName":"Portery","Mobile":"Ie"},
+        {"id":3,"FirstName":"Aksh","LastName":"Petel","Mobile":"chen"},
+        {"id":7,"FirstName":"Aiy","LastName":"Pety","Mobile":"sony"}
     ]
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
