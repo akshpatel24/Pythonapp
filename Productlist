@@ -1,0 +1,33 @@
+from fastapi import FastAPI
+import uvicorn
+from pydantic import BaseModel
+app=FastAPI()
+class Product(BaseModel):
+    id: int
+    ProductName: str
+    Rate: float
+    Category: str
+
+@app.get("/Product",response_model=list[Product])
+def friends_info():
+    return[
+        {"id":2,"ProductName":"Mac","Rate":23,"Category":"Laptop"},
+        {"id":3,"ProductName":"Apple","Rate":28,"Category":"Laptop"}
+
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
