@@ -13,7 +13,6 @@ def friends_info():
     return[
         {"id":2,"ProductName":"Mac","Rate":23,"Category":"Laptop"},
         {"id":3,"ProductName":"Apple","Rate":28,"Category":"Laptop"}
-
     ]
 
 

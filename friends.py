@@ -7,8 +7,6 @@ class friends(BaseModel):
     FirstName: str
     LastName: str
     Mobile: str
-
-
 @app.get("/friends",response_model=list[friends])
 def friends_info():
     return[
